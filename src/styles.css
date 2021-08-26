@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+:root {
+  --font-family: "Noto Sans", sans-serif;
+  --main-color: #ea1e63;
+}
+.active {
+  color: black !important;
+}
+a {
+  text-decoration: none;
+}
+
+p {
+  color: #4b4b4b;
+  line-height: 1.5em;
+  font-family: "Noto Sans", sans-serif;
+}
+.color-primary {
+  color: var(--main-color);
+}
+.text-bold {
+  font-weight: 900;
+}
+.logo {
+  height: 40px;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+/* navigation bar */
+.navbar-home {
+  background-color: var(--main-color);
+}
+.navbar-home h4 {
+  font-family: "Lobster", cursive;
+}
+
+.navbar-home .links a {
+  margin-left: 15px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* footer */
+footer {
+  background-color: var(--main-color);
+  left: 0;
+  color: #eee;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+footer ul {
+  display: flex;
+}
+footer ul li {
+  list-style-type: none;
+  margin: 10px;
+}
+footer ul li a {
+  color: whitesmoke !important;
+}
