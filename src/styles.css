@@ -108,3 +108,9 @@ footer ul li a {
 .my-details span {
   margin-left: 150px;
 }
+
+/* my-repository */
+.my-repository h2 {
+  text-transform: uppercase;
+  color: var(--main-color);
+}
