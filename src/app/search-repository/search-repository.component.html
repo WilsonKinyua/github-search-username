@@ -1,1 +1,49 @@
-<p>search-repository works!</p>
+<div class="container search-page">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 mt-5">
+      <div>
+        <form (ngSubmit)="searchGithubUserRepositories()" id="search-form" #f="ngForm">
+          <input type="text" class="form-control search" ngModel name="search"
+            placeholder="Enter github username to search the repositories........" required #search="ngModel">
+          <p class="text-danger error-block" *ngIf="!search.valid && search.touched"><small>Fill in field!</small></p>
+          <div class="d-grid mt-2">
+            <button type="submit" class="btn btn-block btn-search" [disabled]="!f.valid">
+              Search User Repositories<i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row my-repository mt-5" *ngIf="displayUserRepositoryList">
+    <div class="col-md-12 text-center m-2">
+      <h2 class="text-underline">Repositories Found</h2>
+    </div>
+    <div class="col-md-3" *ngFor="let repository of userRepositories; let i = index">
+      <div class="card card-repo">
+        <div class="card-body text-center">
+          <h5 class="card-title text-capitalize heading"> {{ repository.name }} </h5>
+          <p class="card-text mt-1">{{ repository.description ? (repository.description | slice: 0: 90) : 'No repository
+            description' }} ...</p>
+        </div>
+        <div class="card-body text-center">
+          <p class="card-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">{{
+                repository.created_at | date }}</span></strong> </p>
+          <a href="{{ repository.html_url }}" target="_blank" class="card-link color-primary">View repository <i
+              class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row homepage" *ngIf="!displayUserRepositoryList && displayUserErrorMessage">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 mt-4">
+      <div class="card">
+        <div class="alert alert-danger" role="alert">No Github user found!</div>
+      </div>
+    </div>
+  </div>
+</div>
