@@ -14,6 +14,7 @@ Week 2 Independent Project | Github Search Username at Moringa School Core (Angu
 - Angular CLI (https://cli.angular.io/)
 - Node.js (https://nodejs.org/)
 - NPM (https://www.npmjs.com/)
+- Github ApiKey
 
 ## Setup Installation
 
@@ -33,6 +34,7 @@ ng serve
 ```
 
 - open the browser and navigate to http://localhost:4200/ to see the application in action
+- Generate Github ApiKey(https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 ## Technologies Used
 
