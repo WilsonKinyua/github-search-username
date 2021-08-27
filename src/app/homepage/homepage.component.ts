@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Repository } from '../classes/repository';
 import { User } from '../classes/user';
 import { ResponseDataService } from '../services/response-data.service';
 
@@ -20,20 +19,26 @@ export class HomepageComponent implements OnInit {
 
   // user details
   getUserDetails(githubUsername) {
-    this.responseUserDataService
-      .getUserRequest(githubUsername)
-      .then((response) => {
+    this.responseUserDataService.getUserRequest(githubUsername).then(
+      (response) => {
         this.userDetails = this.responseUserDataService.userGottenDetails;
-      }); // end of getUserRequest
+      },
+      (error) => {
+        console.log(error);
+      }
+    ); // end of getUserRequest
   }
 
   // userRepositories
   getUserRepositories(githubUsername) {
-    this.responseUserDataService
-      .getUserRepositoryRequest(githubUsername)
-      .then((response) => {
+    this.responseUserDataService.getUserRepositoryRequest(githubUsername).then(
+      (response) => {
         this.userRepositories = this.responseUserDataService.userRepositories;
         console.log(this.userRepositories);
-      }); // end of getUserRepositoryRequest
+      },
+      (error) => {
+        console.log(error);
+      }
+    ); // end of getUserRepositoryRequest
   }
 }

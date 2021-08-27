@@ -61,9 +61,7 @@ export class ResponseDataService {
         .toPromise()
         .then(
           (response) => {
-            // console.log(response);
             this.userGottenDetails = response;
-            // console.log(this.userGottenDetails);
             resolve();
           },
           (error) => {
@@ -92,16 +90,13 @@ export class ResponseDataService {
           environment.apiUrl +
             '/' +
             githubUsername +
-            '/repos?access_token=' +
+            '/repos?sort=created&direction=desc?access_token=' +
             environment.apiKey
         )
         .toPromise()
         .then(
           (response) => {
-            // console.log(response);
             this.userRepositories = response;
-            // console.log(response)
-            // console.log(this.userRepository);
             resolve();
           },
           (error) => {
@@ -113,30 +108,3 @@ export class ResponseDataService {
     return UserRepositoryPromise;
   }
 }
-
-// this.http
-//   .get<ApiUserRepositoryResponse>(
-//     environment.apiUrl +
-//       '/' +
-//       githubUsername +
-//       '/repos' +
-//       '?access_token=' +
-//       environment.apiKey
-//   )
-//   .toPromise()
-//   .then(
-//     (response) => {
-//       // console.log('repositories => ' + response);
-//       this.userRepository = response;
-//       // console.log(this.userRepository[1]);
-//       resolve();
-//     },
-//     (error) => {
-//       reject(error);
-//       console.log(error);
-//     }
-//         );
-//     });
-//     return UserRepositoryPromise;
-//   }
-// }
