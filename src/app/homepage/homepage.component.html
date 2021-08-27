@@ -6,7 +6,8 @@
         <div class="card-body text-center">
           <h4 class="card-text">{{ userDetails?.name }}</h4>
           <p>{{ userDetails?.location }}</p>
-          <h6>Jioned on: <span class="badge rounded-pill bg-secondary text-white">{{ userDetails?.created_at|date }}</span> </h6>
+          <h6>Jioned on: <span class="badge rounded-pill bg-secondary text-white">{{ userDetails?.created_at|date
+              }}</span> </h6>
           <div class="d-flex justify-content-evenly">
             <div>
               <p> <i class="fa fa-user"></i> {{ userDetails?.followers }} followers</p>
@@ -39,8 +40,8 @@
                 twitter
               </div>
               <div>
-                <small><a class="btn btn-sm text-white" href="https://twitter.com/ {{ userDetails?.twitter_username }}" target="_blank"
-                    rel="noopener noreferrer">View Twitter  <i class="fa fa-arrow-right"></i></a></small>
+                <small><a class="btn btn-sm text-white" href="https://twitter.com/ {{ userDetails?.twitter_username }}"
+                    target="_blank" rel="noopener noreferrer">View Twitter <i class="fa fa-arrow-right"></i></a></small>
               </div>
             </div>
           </li>
@@ -51,8 +52,8 @@
                 github
               </div>
               <div>
-                <small><a class="btn btn-sm text-white" href="https://github.com/{{ userDetails?.login }}" target="_blank"
-                    rel="noopener noreferrer">View Github <i class="fa fa-arrow-right"></i></a></small>
+                <small><a class="btn btn-sm text-white" href="https://github.com/{{ userDetails?.login }}"
+                    target="_blank" rel="noopener noreferrer">View Github <i class="fa fa-arrow-right"></i></a></small>
               </div>
             </div>
           </li>
@@ -91,53 +92,16 @@
     <div class="col-md-12 text-center m-2">
       <h2>My repositories</h2>
     </div>
-    <div class="col-md-3">
+    <!-- {{ userRepositories[] }} -->
+    <!-- loop through userRepositories -->
+    <div class="col-md-3"
+      *ngFor="let repository of userRepositories; let i = index">
       <div class="card">
         <div class="card-body text-center">
-          <h5 class="card-title">Dangote industries limited</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <h5 class="card-title"> {{ repository.name }}  </h5>
+          <p class="card-text">{{ repository.description }}</p>
         </div>
         <div class="card-body text-center">
-          <a href="#" class="card-link color-primary">View repository</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card">
-        <div class="card-body text-center">
-          <h5 class="card-title">Dangote industries limited</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        </div>
-        <div class="card-body text-center">
-          <!-- <a href="#" class="card-link">Card link</a> -->
-          <a href="#" class="card-link color-primary">View repository</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card">
-        <div class="card-body text-center">
-          <h5 class="card-title">Dangote industries limited</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        </div>
-        <div class="card-body text-center">
-          <!-- <a href="#" class="card-link">Card link</a> -->
-          <a href="#" class="card-link color-primary">View repository</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card">
-        <div class="card-body text-center">
-          <h5 class="card-title">Dangote industries limited</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        </div>
-        <div class="card-body text-center">
-          <!-- <a href="#" class="card-link">Card link</a> -->
           <a href="#" class="card-link color-primary">View repository</a>
         </div>
       </div>

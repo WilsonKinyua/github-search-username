@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ResponseDataService {
   userGottenDetails: User;
-  userRepository: Repository;
+  userRepositories: Repository;
 
   constructor(private http: HttpClient) {
     this.userGottenDetails = new User(
@@ -28,7 +28,7 @@ export class ResponseDataService {
       ''
     );
     // empty repository
-    this.userRepository = new Repository('', '', '', new Date(), '');
+    this.userRepositories = new Repository('', '', '', new Date(), '');
   }
 
   // get user
@@ -61,9 +61,9 @@ export class ResponseDataService {
         .toPromise()
         .then(
           (response) => {
-            console.log(response);
+            // console.log(response);
             this.userGottenDetails = response;
-            console.log(this.userGottenDetails);
+            // console.log(this.userGottenDetails);
             resolve();
           },
           (error) => {
@@ -92,16 +92,16 @@ export class ResponseDataService {
           environment.apiUrl +
             '/' +
             githubUsername +
-            '?access_token=' +
-            environment.apiKey +
-            '/repos'
+            '/repos?access_token=' +
+            environment.apiKey
         )
         .toPromise()
         .then(
           (response) => {
-            console.log('repositories => ' + response);
-            this.userRepository = response;
-            console.log('repositories => ' + this.userRepository);
+            // console.log(response);
+            this.userRepositories = response;
+            // console.log(response)
+            // console.log(this.userRepository);
             resolve();
           },
           (error) => {
@@ -113,3 +113,30 @@ export class ResponseDataService {
     return UserRepositoryPromise;
   }
 }
+
+// this.http
+//   .get<ApiUserRepositoryResponse>(
+//     environment.apiUrl +
+//       '/' +
+//       githubUsername +
+//       '/repos' +
+//       '?access_token=' +
+//       environment.apiKey
+//   )
+//   .toPromise()
+//   .then(
+//     (response) => {
+//       // console.log('repositories => ' + response);
+//       this.userRepository = response;
+//       // console.log(this.userRepository[1]);
+//       resolve();
+//     },
+//     (error) => {
+//       reject(error);
+//       console.log(error);
+//     }
+//         );
+//     });
+//     return UserRepositoryPromise;
+//   }
+// }
