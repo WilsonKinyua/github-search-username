@@ -38,10 +38,7 @@ p {
   height: 40px;
 }
 
-input.ng-invalid.ng-touched,
-textarea.ng-invalid.ng-touched {
-  border: 1px solid red;
-}
+
 .card-repo {
   height: 300px;
 }
@@ -132,7 +129,7 @@ footer ul li a {
   font-size: 16px;
   border-radius: 30px;
   padding-left: 30px;
-  margin-top: 150px;
+  margin-top: 50px;
   box-shadow: 4px 9px 5px -5px rgba(133, 131, 131, 0.34);
   -webkit-box-shadow: 4px 9px 5px -5px rgba(133, 131, 131, 0.34);
   -moz-box-shadow: 4px 9px 5px -5px rgba(133, 131, 131, 0.34);

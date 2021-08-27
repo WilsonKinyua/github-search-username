@@ -1,19 +1,102 @@
 <div class="container search-page">
   <div class="row">
     <div class="col-md-4"></div>
-    <div class="col-md-4 mt-5">
+    <div class="col-md-4">
       <div>
-        <form id="search-form" #searchForm="ngForm">
-          <input type="text" class="form-control search" name="search" placeholder="Enter github username to search........" ngModel required>
+        <form (ngSubmit)="searchGithubUser()" id="search-form" #f="ngForm">
+          <input type="text" class="form-control search" ngModel name="search"
+            placeholder="Enter github username to search........" required #search="ngModel">
+          <p class="text-danger error-block" *ngIf="!search.valid && search.touched"><small>Fill in field!</small></p>
           <div class="d-grid mt-2">
-            <a type="submit" class="btn btn-block btn-search">
+            <button type="submit" class="btn btn-block btn-search" [disabled]="!f.valid">
               Search User <i class="fa fa-arrow-right"></i>
-            </a>
+            </button>
           </div>
         </form>
       </div>
 
     </div>
+    <div class="col-md-4"></div>
   </div>
-  <div class="col-md-4"></div>
+  <!-- user details -->
+  <div class="row homepage" *ngIf="displayUserDetailContainer">
+    <div class="col-md-4 mt-4">
+      <div class="card">
+        <img [src]="userDetails?.avatar_url" class="card-img-top" alt="My profile picture">
+        <div class="card-body text-center">
+          <h4 class="card-text">{{ userDetails?.name }}</h4>
+          <p>{{ userDetails?.location }}</p>
+          <h6>Jioned on: <span class="badge rounded-pill bg-secondary text-white">{{ userDetails?.created_at|date
+              }}</span> </h6>
+          <div class="d-flex justify-content-evenly">
+            <div>
+              <p> <i class="fa fa-user"></i> {{ userDetails?.followers }} followers</p>
+            </div>
+            <div>
+              <p> <i class="fa fa-user"></i> {{ userDetails?.following }} followers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7 mt-4">
+      <div class="card">
+        <ul class="list-group list-group-flush my-details">
+          <li class="list-group-item">Name: <span>{{ userDetails?.name }}</span></li>
+          <li class="list-group-item">Address: <span>{{ userDetails?.location }}</span></li>
+          <li class="list-group-item">Public repos: <span class="badge rounded-pill bg-warning text-dark">{{
+              userDetails?.public_repos }}</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">About me</li>
+          <li class="list-group-item">
+            <p>{{ userDetails?.bio }}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="card mt-3 card-social-media">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="d-flex justify-content-between">
+              <div>
+                <i class="fa fa-globe"></i>
+                website
+              </div>
+              <div>
+                <small><a href="{{ userDetails?.blog }}" class="btn btn-sm text-white" target="_blank"
+                    rel="noopener noreferrer">View Website <i class="fa fa-arrow-right"></i></a></small>
+              </div>
+            </div>
+
+          </li>
+          <li class="list-group-item">
+            <div class="d-flex justify-content-between">
+              <div>
+                <i class="fa fa-twitter"></i>
+                twitter
+              </div>
+              <div>
+                <small><a class="btn btn-sm text-white" href="https://twitter.com/ {{ userDetails?.twitter_username }}"
+                    target="_blank" rel="noopener noreferrer">View Twitter <i class="fa fa-arrow-right"></i></a></small>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="d-flex justify-content-between">
+              <div>
+                <i class="fa fa-github"></i>
+                github
+              </div>
+              <div>
+                <small><a class="btn btn-sm text-white" href="https://github.com/{{ userDetails?.login }}"
+                    target="_blank" rel="noopener noreferrer">View Github <i class="fa fa-arrow-right"></i></a></small>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

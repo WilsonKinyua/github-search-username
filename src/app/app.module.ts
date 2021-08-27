@@ -27,10 +27,10 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
     NgProgressModule.forRoot(),
     NgProgressHttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
