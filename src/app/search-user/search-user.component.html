@@ -1,7 +1,7 @@
 <div class="container search-page">
   <div class="row">
     <div class="col-md-4"></div>
-    <div class="col-md-4">
+    <div class="col-md-4 mt-5">
       <div>
         <form (ngSubmit)="searchGithubUser()" id="search-form" #f="ngForm">
           <input type="text" class="form-control search" ngModel name="search"
@@ -18,14 +18,14 @@
     </div>
     <div class="col-md-4"></div>
   </div>
-  <!-- user details -->
+  <!-- user details when searched -->
   <div class="row homepage" *ngIf="displayUserDetailContainer">
     <div class="col-md-4 mt-4">
       <div class="card">
         <img [src]="userDetails?.avatar_url" class="card-img-top" alt="My profile picture">
         <div class="card-body text-center">
-          <h4 class="card-text">{{ userDetails?.name }}</h4>
-          <p>{{ userDetails?.location }}</p>
+          <h4 class="card-text">{{ userDetails?.name ? userDetails?.name : 'No name found' }}</h4>
+          <p>{{ userDetails?.location ? userDetails?.location : 'No address' }}</p>
           <h6>Jioned on: <span class="badge rounded-pill bg-secondary text-white">{{ userDetails?.created_at|date
               }}</span> </h6>
           <div class="d-flex justify-content-evenly">
@@ -42,17 +42,18 @@
     <div class="col-md-7 mt-4">
       <div class="card">
         <ul class="list-group list-group-flush my-details">
-          <li class="list-group-item">Name: <span>{{ userDetails?.name }}</span></li>
-          <li class="list-group-item">Address: <span>{{ userDetails?.location }}</span></li>
+          <li class="list-group-item">Name: <span>{{ userDetails?.name ? userDetails?.name : 'No name found' }}</span></li>
+          <li class="list-group-item">Address: <span>{{ userDetails?.location ? userDetails?.location : 'No address'
+              }}</span></li>
           <li class="list-group-item">Public repos: <span class="badge rounded-pill bg-warning text-dark">{{
               userDetails?.public_repos }}</span></li>
         </ul>
       </div>
       <div class="card">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">About me</li>
+          <li class="list-group-item">About <strong>{{ userDetails?.name }} 😃</strong></li>
           <li class="list-group-item">
-            <p>{{ userDetails?.bio }}</p>
+            <p>{{ userDetails?.bio ? userDetails?.bio : 'No description for the above user' }}</p>
           </li>
         </ul>
       </div>
@@ -96,6 +97,15 @@
             </div>
           </li>
         </ul>
+      </div>
+    </div>
+  </div>
+  <!-- user details if nothing on input field -->
+  <div class="row homepage" *ngIf="!displayUserDetailContainer && displayGithubUserErrorNotFound">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 mt-4">
+      <div class="card">
+        <div class="alert alert-danger" role="alert">No Github user found!</div>
       </div>
     </div>
   </div>

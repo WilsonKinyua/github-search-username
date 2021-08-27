@@ -12,6 +12,7 @@ export class SearchUserComponent implements OnInit {
   userDetails;
   searchText: string;
   displayUserDetailContainer = false;
+  displayGithubUserErrorNotFound = false;
 
   // accessing the form inputs
   @ViewChild('f') searchForm: NgForm;
@@ -25,12 +26,14 @@ export class SearchUserComponent implements OnInit {
     this.searchText = this.searchForm.value.search;
     this.userservice.getUserRequest(this.searchText).then(
       (response) => {
-        this.userDetails = this.userservice.userGottenDetails;
+          this.userDetails = this.userservice.userGottenDetails;
+          this.displayUserDetailContainer = true;
       },
       (error) => {
         console.log(error);
+        this.displayGithubUserErrorNotFound = true;
       }
     );
-    this.displayUserDetailContainer = true;
+
   }
 }
