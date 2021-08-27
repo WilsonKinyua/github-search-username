@@ -92,15 +92,17 @@
     <div class="col-md-12 text-center m-2">
       <h2>My repositories</h2>
     </div>
-    <div class="col-md-3"
-      *ngFor="let repository of userRepositories; let i = index">
-      <div class="card">
+    <div class="col-md-3" *ngFor="let repository of userRepositories; let i = index">
+      <div class="card card-repo">
         <div class="card-body text-center">
-          <h5 class="card-title"> {{ repository.name }}  </h5>
-          <p class="card-text">{{ repository.description }}</p>
+          <h5 class="card-title text-capitalize heading"> {{ repository.name }} </h5>
+          <p class="card-text mt-1">{{ repository.description ? (repository.description | slice: 0: 90) : 'No repository
+            description' }} ...</p>
         </div>
         <div class="card-body text-center">
-          <a href="#" class="card-link color-primary">View repository</a>
+          <p class="card-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">{{
+                repository.created_at | date }}</span></strong> </p>
+          <a href="{{ repository.html_url }}" target="_blank" class="card-link color-primary">View repository <i class="fa fa-arrow-right"></i></a>
         </div>
       </div>
     </div>

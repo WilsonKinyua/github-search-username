@@ -3,8 +3,8 @@
     <div class="col-md-4"></div>
     <div class="col-md-4 mt-5">
       <div>
-        <form id="search-form">
-          <input type="text" class="form-control" name="search" placeholder="Enter user....." required>
+        <form id="search-form" #searchForm="ngForm">
+          <input type="text" class="form-control search" name="search" placeholder="Enter github username to search........" ngModel required>
           <div class="d-grid mt-2">
             <a type="submit" class="btn btn-block btn-search">
               Search User <i class="fa fa-arrow-right"></i>

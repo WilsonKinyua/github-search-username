@@ -4,6 +4,7 @@
 /* fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap");
 :root {
   --font-family: "Noto Sans", sans-serif;
   --main-color: #ea1e63;
@@ -13,7 +14,7 @@ body {
   background-color: rgb(248, 239, 239);
 }
 .btn {
-  background-color:#ea1e63;
+  background-color: #ea1e63;
 }
 .active {
   color: black !important;
@@ -41,7 +42,12 @@ input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched {
   border: 1px solid red;
 }
-
+.card-repo {
+  height: 300px;
+}
+.heading {
+  font-family: "Merienda", cursive;
+}
 /* navigation bar */
 .navbar-home {
   background-color: var(--main-color);
@@ -103,7 +109,6 @@ footer ul li a {
   margin-top: 6px;
 }
 
-
 .homepage .justify-content-evenly {
   font-size: 12px;
 }
@@ -128,13 +133,20 @@ footer ul li a {
   border-radius: 30px;
   padding-left: 30px;
   margin-top: 150px;
-  box-shadow: 4px 9px 5px -5px rgba(133,131,131,0.34);
-  -webkit-box-shadow: 4px 9px 5px -5px rgba(133,131,131,0.34);
-  -moz-box-shadow: 4px 9px 5px -5px rgba(133,131,131,0.34);
+  box-shadow: 4px 9px 5px -5px rgba(133, 131, 131, 0.34);
+  -webkit-box-shadow: 4px 9px 5px -5px rgba(133, 131, 131, 0.34);
+  -moz-box-shadow: 4px 9px 5px -5px rgba(133, 131, 131, 0.34);
 }
 
-.btn-search, .btn-search:hover {
+.btn-search,
+.btn-search:hover {
   background-color: var(--main-color);
   color: whitesmoke;
-  transition: all .2s ease-out, color .2s ease-out;
+  transition: all 0.2s ease-out, color 0.2s ease-out;
+}
+
+/* search page */
+
+.search::placeholder {
+  font-size: 13px;
 }
