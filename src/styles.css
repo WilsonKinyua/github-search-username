@@ -12,6 +12,9 @@
 body {
   background-color: rgb(248, 239, 239);
 }
+.btn {
+  background-color:#ea1e63;
+}
 .active {
   color: black !important;
 }

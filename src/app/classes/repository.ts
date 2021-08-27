@@ -1,9 +1,9 @@
 export class Repository {
   constructor(
-    public repo_name: string,
-    public repo_url: string,
+    public name: string,
+    public html_url: string,
     public description: string,
-    public created_date: Date,
+    public created_at: Date,
     public language?: string
   ) {}
 }

@@ -6,12 +6,13 @@
         <div class="card-body text-center">
           <h4 class="card-text">{{ userDetails?.name }}</h4>
           <p>{{ userDetails?.location }}</p>
+          <h6>Jioned on: <span class="badge rounded-pill bg-secondary text-white">{{ userDetails?.created_at|date }}</span> </h6>
           <div class="d-flex justify-content-evenly">
             <div>
-              <p> <i class="fa fa-user"></i> {{ userDetails.followers }} followers</p>
+              <p> <i class="fa fa-user"></i> {{ userDetails?.followers }} followers</p>
             </div>
             <div>
-              <p> <i class="fa fa-user"></i> {{ userDetails.following }} followers</p>
+              <p> <i class="fa fa-user"></i> {{ userDetails?.following }} followers</p>
             </div>
           </div>
         </div>
@@ -25,7 +26,8 @@
                 website
               </div>
               <div>
-                <small>{{ userDetails.blog }}</small>
+                <small><a href="{{ userDetails?.blog }}" class="btn btn-sm text-white" target="_blank"
+                    rel="noopener noreferrer">View Website <i class="fa fa-arrow-right"></i></a></small>
               </div>
             </div>
 
@@ -37,7 +39,8 @@
                 twitter
               </div>
               <div>
-                <small> {{ userDetails.twitter_username }}</small>
+                <small><a class="btn btn-sm text-white" href="https://twitter.com/ {{ userDetails?.twitter_username }}" target="_blank"
+                    rel="noopener noreferrer">View Twitter  <i class="fa fa-arrow-right"></i></a></small>
               </div>
             </div>
           </li>
@@ -48,7 +51,8 @@
                 github
               </div>
               <div>
-                <small> @{{ userDetails.login }}</small>
+                <small><a class="btn btn-sm text-white" href="https://github.com/{{ userDetails?.login }}" target="_blank"
+                    rel="noopener noreferrer">View Github <i class="fa fa-arrow-right"></i></a></small>
               </div>
             </div>
           </li>

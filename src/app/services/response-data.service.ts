@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ResponseDataService {
   userGottenDetails: User;
-  repository: Repository;
+  userRepository: Repository;
 
   constructor(private http: HttpClient) {
     this.userGottenDetails = new User(
@@ -27,6 +27,8 @@ export class ResponseDataService {
       new Date(),
       ''
     );
+    // empty repository
+    this.userRepository = new Repository('', '', '', new Date(), '');
   }
 
   // get user
@@ -36,11 +38,12 @@ export class ResponseDataService {
       login: string;
       avatar_url: string;
       blog: string;
+      public_repos: number;
       html_url: string;
       location: string;
       bio: string;
       twitter_username: string;
-      public_repos: number;
+      _repos: number;
       followers: number;
       following: number;
       created_at: Date;
@@ -70,5 +73,43 @@ export class ResponseDataService {
         )
     );
     return userPromise;
+  }
+
+  // get user repositories
+  getUserRepositoryRequest(githubUsername) {
+    // the interface
+    interface ApiUserRepositoryResponse {
+      name: string;
+      html_url: string;
+      description: string;
+      created_at: Date;
+      language?: string;
+    }
+
+    let UserRepositoryPromise = new Promise<void>((resolve, reject) => {
+      this.http
+        .get<ApiUserRepositoryResponse>(
+          environment.apiUrl +
+            '/' +
+            githubUsername +
+            '?access_token=' +
+            environment.apiKey +
+            '/repos'
+        )
+        .toPromise()
+        .then(
+          (response) => {
+            console.log('repositories => ' + response);
+            this.userRepository = response;
+            console.log('repositories => ' + this.userRepository);
+            resolve();
+          },
+          (error) => {
+            reject(error);
+            console.log(error);
+          }
+        );
+    });
+    return UserRepositoryPromise;
   }
 }
