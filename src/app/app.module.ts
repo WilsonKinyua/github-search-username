@@ -13,6 +13,7 @@ import { SearchRepositoryComponent } from './search-repository/search-repository
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { StarRepoDirective } from './directives/star-repo.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     SearchRepositoryComponent,
     NotFoundComponent,
     FooterComponent,
+    StarRepoDirective,
   ],
   imports: [
     BrowserModule,

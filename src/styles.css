@@ -147,3 +147,9 @@ footer ul li a {
 .search::placeholder {
   font-size: 13px;
 }
+
+/* star repo */
+
+.float-right{
+  text-align:end;
+}
