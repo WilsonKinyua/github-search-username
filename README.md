@@ -1,27 +1,120 @@
 # Github Search Username
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+#### Created By Wilson Kinyua Muthoni on 28-08-2021
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Week 2 Independent Project | Github Search Username at Moringa School Core (Angular Module). A web application where users can search github users and view their details, can also view repositories of the user and also allows users star repositories they like from the searches.
 
-## Code scaffolding
+## Setup Requirements
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Git
+- Web-browser or your choice
+- Github
+- Angular CLI (https://cli.angular.io/)
+- Node.js (https://nodejs.org/)
+- NPM (https://www.npmjs.com/)
 
-## Build
+## Setup Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Copy the github repository url
+- Clone to your computer
+- Open terminal and navigate to the directory of the project you just cloned to your computer
+- Run the following command to install all the dependencies
 
-## Running unit tests
+```
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- And the following to run development server
 
-## Running end-to-end tests
+```
+ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- open the browser and navigate to http://localhost:4200/ to see the application in action
 
-## Further help
+## Technologies Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The following languages have been used on this project:
+
+- HTML
+- CSS
+- Bootstrap
+- Angular CLI
+
+## Setup/Installation Requirements
+
+- Live link to view the project <a href="https://wilsonkinyua.github.io/quote-generator/">View Github Search Username</a>
+
+## Some Screenshots
+
+- Homepage
+  <img src="./src/assets/screenshots/1.png" alt="screenshot" />
+
+- MY REPOSITORIES SECTION
+  <img src="./src/assets/screenshots/2.png" alt="screenshot" />
+
+- MY REPOSITORIES SECTION(cont.)
+  <img src="./src/assets/screenshots/3.png" alt="screenshot" />
+
+- Search Github User Form
+  <img src="./src/assets/screenshots/4.png" alt="screenshot" />
+
+- Error message if no github user found
+  <img src="./src/assets/screenshots/5.png" alt="screenshot" />
+
+- Github User search details
+  <img src="./src/assets/screenshots/6.png" alt="screenshot" />
+
+- Github search User Repositories
+  <img src="./src/assets/screenshots/7.png" alt="screenshot" />
+
+- Error message if no repositories
+  <img src="./src/assets/screenshots/8.png" alt="screenshot" />
+
+  - Search for user repositories form
+    <img src="./src/assets/screenshots/10.png" alt="screenshot" />
+
+  - Github User repositories
+    <img src="./src/assets/screenshots/11.png" alt="screenshot" />
+
+  - 404 Page(Not found page)
+    <img src="./src/assets/screenshots/12.png" alt="screenshot" />
+
+  - Fully phone responsive
+    <br>
+    <img src="./src/assets/screenshots/13.png" alt="screenshot" />
+
+## Known Bugs
+
+So far so good there are no bugs related to this project 😎
+
+## Support and contact details 🙂
+
+To make a contribution to the code used or any suggestions you can click on the contact link and email me your suggestions.
+
+- Email: wilson@developerwilson.com
+- Phone: +254717255460
+
+## License
+
+Copyright (c) 2021 Moringa school
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files , to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
