@@ -1,9 +1,9 @@
 export class User {
   constructor(
     public name: string,
-    public avatar: string,
+    public avatar_url: string,
     public blog: string,
-    public github_html_link: string,
+    public html_url: string,
     public location: string,
     public bio: string,
     public twitter_username: string,
