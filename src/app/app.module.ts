@@ -14,6 +14,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { StarRepoDirective } from './directives/star-repo.directive';
+import { CapitalizeSentencePipe } from './pipes/capitalize-sentence.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { StarRepoDirective } from './directives/star-repo.directive';
     NotFoundComponent,
     FooterComponent,
     StarRepoDirective,
+    CapitalizeSentencePipe,
   ],
   imports: [
     BrowserModule,

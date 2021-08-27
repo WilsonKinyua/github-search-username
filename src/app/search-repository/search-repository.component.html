@@ -26,13 +26,13 @@
       <div class="card card-repo">
         <span class="float-right"><i appStarRepo title="Star Repository" class="fa fa-star"></i></span>
         <div class="card-body text-center">
-          <h5 class="card-title text-capitalize heading"> {{ repository.name }} </h5>
+          <h5 class="card-title text-capitalize heading"> {{ repository.name|capitalizeSentence }} </h5>
           <p class="card-text mt-1">{{ repository.description ? (repository.description | slice: 0: 90) : 'No repository
             description' }} ...</p>
         </div>
         <div class="card-body text-center">
           <p class="card-text"><strong>Created on: <span class="badge rounded-pill bg-warning text-dark">{{
-                repository.created_at | date }}</span></strong> </p>
+                repository.created_at | date  }}</span></strong> </p>
           <a href="{{ repository.html_url }}" target="_blank" class="card-link color-primary">View repository <i
               class="fa fa-arrow-right"></i></a>
         </div>

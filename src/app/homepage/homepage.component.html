@@ -96,7 +96,7 @@
       <div class="card card-repo">
         <span class="float-right"><i appStarRepo title="Star Repository" class="fa fa-star"></i></span>
         <div class="card-body text-center">
-          <h5 class="card-title text-capitalize heading"> {{ repository.name }} </h5>
+          <h5 class="card-title heading"> {{ repository.name|capitalizeSentence }} </h5>
           <p class="card-text mt-1">{{ repository.description ? (repository.description | slice: 0: 90) : 'No repository
             description' }} ...</p>
         </div>
