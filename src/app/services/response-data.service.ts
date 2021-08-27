@@ -20,6 +20,7 @@ export class ResponseDataService {
       '',
       '',
       '',
+      '',
       0,
       0,
       0,
@@ -32,6 +33,7 @@ export class ResponseDataService {
   getUserRequest(githubUsername) {
     interface ApiUserResponse {
       name: string;
+      login: string;
       avatar_url: string;
       blog: string;
       html_url: string;
