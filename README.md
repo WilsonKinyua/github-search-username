@@ -4,7 +4,7 @@
 
 ## Description
 
-Week 2 Independent Project | Github Search Username at Moringa School Core (Angular Module). A web application where users can search github users and view their details, can also view repositories of the user and also allows users star repositories they like from the searches.
+Github Search Username at Moringa School Core (Angular Module). A web application where users can search github users and view their details, can also view repositories of the user and also allows users star repositories they like from the searches.
 
 ## Setup Requirements
 
